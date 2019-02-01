@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+		
+		<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *;" />
+		
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-cookie.js"></script>	
+		<script src="js/jquery-ui.js"></script> 
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+		<link rel="stylesheet" href="css/owl.carousel.css">
+    	<link rel="stylesheet" href="css/owl.theme.default.css">
+		<link rel="stylesheet" href="css/fontawesome.css">
+    	<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.colorbox-min.js"></script>
+		<script src="custom.js"></script>
+		
+		<title>APP GBM</title>
+	</head>	
+		
+	<body id="atlas-page">
+		
+		<section class="title">
+			<span>Atlas de dermatologia</span>
+			<a href="ferramentas-medicas.html" style="float: right; vertical-align: middle; color: #fff; font-size: 40px;"><i class="fas fa-angle-left"></i></a>
+		</section>
+		
+		<section id="content">
+	
+			<form id="seach-lesoes">
+				<input type="text" id="pesquisa-lesoes" placeholder="Pesquisar lesões..." />
+			</form>
+			
+			
+			<script type="text/javascript">
+				$(document).ready(function() {
+					
+					 var url="http://gbm.appsbdrj.kinghost.net/atlas.php";
+					 $.getJSON(url,function(result){
+						 $.each(result, function(i, field){
+							 
+							 var img2 = field.imagem2;
+							 var img3 = field.imagem3;
+							 var img4 = field.imagem4;
+							 var img5 = field.imagem5;
+							 var img6 = field.imagem6;
+							 var img7 = field.imagem7;
+							 
+							 var iimg2 = '';
+							 var iimg3 = '';
+							 var iimg4 = '';
+							 var iimg5 = '';
+							 var iimg6 = '';
+							 var iimg7 = '';
+							 
+							 if(img2 != ''){ iimg2 = '<div class="item"><img src="' + field.imagem2 +'" alt="" /></div>';};
+							 if(img3 != ''){ iimg3 = '<div class="item"><img src="' + field.imagem3 +'" alt="" /></div>';};
+							 if(img4 != ''){ iimg4 = '<div class="item"><img src="' + field.imagem4 +'" alt="" /></div>';};
+							 if(img5 != ''){ iimg5 = '<div class="item"><img src="' + field.imagem5 +'" alt="" /></div>';};
+							 if(img6 != ''){ iimg6 = '<div class="item"><img src="' + field.imagem6 +'" alt="" /></div>';};
+							 if(img7 != ''){ iimg7 = '<div class="item"><img src="' + field.imagem7 +'" alt="" /></div>';};
+							 
+							 $("#resultado").append('<div class="atlas-galery"><div class="img-galery"><img src="' + field.miniatura +'" alt="" /></div><div class="title-galery">' + field.nome + '</div><div class="galery-expand"><i class="fas fa-caret-down"></i> expandir</div><div class="imgs-galery"><div class="owl-theme owl-carousel"><div class="item"><img src="' + field.imagem1 +'" alt="" /></div>' + iimg2 + iimg3 + iimg4 + iimg5 + iimg6 + iimg7 + '</div></div></div>');
+						 });
+					 });
+					
+				});
+			</script>
+			
+			<div id="resultado"></div>
+			
+		</section>
+		
+	</body>
+</html>

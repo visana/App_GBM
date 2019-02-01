@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+
+		<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *;" />
+		
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-cookie.js"></script>	
+		<script src="js/jquery-ui.js"></script> 
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				 var url="http://gbm.appsbdrj.kinghost.net/patrocinadores.php";
+				 $.getJSON(url,function(result){
+					 $.each(result, function(i, field){
+						 $("#patrocinadores").append('<div class="item"><img src="' + field.img + '" alt="" /></div>');
+					 });
+				 });
+
+			});
+		</script>
+		
+		<link rel="stylesheet" href="css/owl.carousel.css">
+    	<link rel="stylesheet" href="css/owl.theme.default.css">
+		<link rel="stylesheet" href="css/fontawesome.css">
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    	<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.colorbox-min.js"></script>
+		<script src="custom.js"></script>
+		
+		<title>APP GBM</title>
+	</head>	
+		
+	<body class="inicial">
+		
+		<section id="content">
+	
+			<ul id="menu-inicial">
+				<li class="big"><a href="ferramentas-medicas.html"><img src="images/ferramentas.png" alt="" /></a></li>
+				<li><a href="encontre-um-especialista.html"><img src="images/encontre.png" alt="" /></a></li>
+				<li><a href="por-dentro-do-gbm.html"><img src="images/dentro.png" alt="" /></a></li>
+				<li><a href="dicas-de-prevencao.html"><img src="images/dicas1.png" alt="" /></a></li>
+				<li><a href="links-uteis.html"><img src="images/links1.png" alt="" /></a></li>
+			</ul>
+			
+			<div class="owl-carousel owl-theme" id="patrocinadores">
+
+			</div>
+			
+		</section>
+		
+	</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+		
+		<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *;" />
+		
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-cookie.js"></script>	
+		<script src="js/jquery-ui.js"></script> 
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+		<link rel="stylesheet" href="css/owl.carousel.css">
+    	<link rel="stylesheet" href="css/owl.theme.default.css">
+		<link rel="stylesheet" href="css/fontawesome.css">
+    	<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.colorbox-min.js"></script>
+		<script src="custom.js"></script>
+		
+		<title>APP GBM</title>
+	</head>	
+		
+	<body class="calculadora">
+		
+		<section class="title">
+			<span>Calculadora TNM</span>
+			<a href="ferramentas-medicas.html" style="float: right; vertical-align: middle; color: #fff; font-size: 40px;"><i class="fas fa-angle-left"></i></a>
+		</section>
+		
+		<section id="content">
+	
+			<form>
+				<select id="t">
+					<option>Escolha uma opção</option>
+					<option value="t0">Não é possível identificar o primário</option>
+					<option value="tx">Há primário, mas não é possível medir o Breslow</option>
+					<option value="tis">Melanoma in situ</option>
+					<option value="t1a">Breslow < 0,8 mm</option>
+					<option value="t1b">Breslow entre 0,8 a 1,0 mm independente ulceração; OU qualquer Breslow < 0,8mm com ulceração</option>
+					<option value="t2a">Breslow acima de 1,0 até 2,0 mm sem ulceração</option>
+					<option value="t2b">Breslow acima de 1,0 até 2,0 mm com ulceração</option>
+					<option value="t3a">Breslow acima de 2,0 até 4,0mm sem ulceração</option>
+					<option value="t3b">Breslow acima de 2,0 até 4,0mm com ulceração </option>
+					<option value="t4a">Breslow acima de 4,0mm sem ulceração</option>
+					<option value="t4b">Breslow acima de 4,0mm com ulceração</option>
+				</select>
+
+				<select id="n">
+					<option>Escolha uma opção</option>
+					<option value="nx">Linfonodos não avaliáveis</option>
+					<option value="n0">Linfonodos negativos</option>
+					<option value="n1a">Um linfonodo comprometido pela biópsia de linfonodo sentinela</option>
+					<option value="n1b">Um linfonodo comprometido clinicamente ou por exame de imagem</option>
+					<option value="n1c">Nenhum linfonodo comprometido MAS presença de satelitose macroscópica ou microscópica</option>
+					<option value="n2a">Dois ou três linfonodos comprometidos pela biópsia de linfonodo sentinela</option>
+					<option value="n2b">Dois ou três linfonodos comprometido clinicamente ou por exame de imagem</option>
+					<option value="n2c">Um linfonodo comprometido E presença de satelitose macroscópica ou microscópica</option>
+					<option value="n3a">Quatro ou mais linfonodos comprometidos pela biópsia de linfonodo sentinela</option>
+					<option value="n3b">Quatro ou mais linfonodos comprometidos clinicamente ou por exame de imagem</option>
+					<option value="n3c">Dois ou mais linfonodos comprometidos E presença de satelitose macroscópica ou microscópica</option>
+				</select>
+
+				<select id="m">
+					<option>Escolha uma opção</option>
+					<option value="m0">Ausência de metástases a distância; DHL não se aplica</option>
+					<option value="m0">Metástases em pele, partes moles, músculos ou linfonodos não regionais; DHL normal</option>
+					<option value="m1">Metástases em pele, partes moles, músculos ou linfonodos não regionais; DHL elevado</option>
+					<option value="m0">Metástases para pulmões (com ou sem comprometimento M1a); DHL normal</option>
+					<option value="m1">Metástases para pulmões (com ou sem comprometimento M1a); DHL elevado</option>
+					<option value="m0">Metástases para outros órgãos sem comprometimento SNC (com ou sem comprometimento M1a e M1b); DHL normal</option>
+					<option value="m1">Metástases para outros órgãos sem comprometimento SNC (com ou sem comprometimento M1a e M1b); DHL elevado</option>
+					<option value="m0">Metástases para SNC (com ou sem comprometimento M1a, M1b e M1c): DHL normal</option>
+					<option value="m1">Metástases para SNC (com ou sem comprometimento M1a, M1b e M1c): DHL elevado</option>
+				</select>
+				<input type="submit" value="Calcular" id="tnm" />
+			</form>
+		
+			<div id="resultado-calc">
+				
+				<script>
+					jQuery( document ).ready(function($) {
+						
+						$( "#tnm" ).click( function(){
+							
+							$('#result').html('');
+							$('#result').append('<br><br><strong>Resultado:</strong> ');
+								
+							//ESTADIO IV
+							if ( $("#m").val() === "m1" ) {
+								$('#result').append('Estadio IV');
+								
+							} else if ( $("#m").val() === "m0" ) {
+								
+								if($("#n").val() === "n0"){
+									
+									if($("#t").val() === "tis"){ $('#result').append('Estadio 0'); }
+									else if($("#t").val() === "t1a"){ $('#result').append('Estadio IA - SV 5a: 99%  10a: 98%<br>Estadio IB - SV 5a: 97%  10a: 94%'); }
+									else if($("#t").val() === "t1b"){ $('#result').append('Estadio IB - SV 5a: 97%  10a: 94%'); }
+									else if($("#t").val() === "t2a"){ $('#result').append('Estadio IB - SV 5a: 97%  10a: 94%'); }
+									else if($("#t").val() === "t2b"){ $('#result').append('Estadio IIA - SV 5a: 94%  10a: 88%'); }
+									else if($("#t").val() === "t3a"){ $('#result').append('Estadio IIA - SV 5a: 94%  10a: 88%'); }
+									else if($("#t").val() === "t3b"){ $('#result').append('Estadio IIB - SV 5a: 87%  10a: 82%'); }
+									else if($("#t").val() === "t4a"){ $('#result').append('Estadio IIB - SV 5a: 87%  10a: 82%'); }
+									else if($("#t").val() === "t4b"){ $('#result').append('Estadio IIC - SV 5a: 82%  10a: 75%'); }
+									
+									else {$('#result').append('Estadio indefinido - Reveja as informações');}
+									
+								} else if ($("#n").val() === "n1a"){
+									
+									if($("#t").val() === "t1a"){ $('#result').append('Estadio IIIA - SV 5a: 93%  10a: 88%'); }
+									else if($("#t").val() === "t1b"){ $('#result').append('Estadio IIIA - SV 5a: 93%  10a: 88%'); }
+									else if($("#t").val() === "t2a"){ $('#result').append('Estadio IIIA - SV 5a: 93%  10a: 88%'); }
+									else if($("#t").val() === "t2b"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t3a"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t4b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									
+									else if($("#t").val() === "tis"){ $('#result').append('Estadio 0'); }
+									else if($("#t").val() === "tx"){ $('#result').append('Estadio IIIA - SV 5a: 93%  10a: 88%'); }
+									else if($("#t").val() === "t4a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									
+									else {$('#result').append('Estadio indefinido - Reveja as informações');}
+									
+								} else if ($("#n").val() === "n1b"){
+									
+									if($("#t").val() === "t0"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t1a"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t1b"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t2a"){ $('#result').append('Estadio IIIA - SV 5a: 93%  10a: 88%<br>Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t4b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									
+									else if($("#t").val() === "tx"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "tis"){ $('#result').append('Estadio 0'); }
+									else if($("#t").val() === "t2b"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t3a"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t4a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									
+									else {$('#result').append('Estadio indefinido - Reveja as informações');}
+									
+								} else if ($("#n").val() === "n1c"){
+									
+									if($("#t").val() === "t0"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t1a"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t1b"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t2a"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t4b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									
+									else if($("#t").val() === "tx"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "tis"){ $('#result').append('Estadio 0'); }
+									else if($("#t").val() === "t2b"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t3a"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t4a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									
+									else {$('#result').append('Estadio indefinido - Reveja as informações');}
+									
+								} else if ($("#n").val() === "n2a"){
+									
+									if($("#t").val() === "t1a"){ $('#result').append('Estadio IIIA - SV 5a: 93%  10a: 88%<br>Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t1b"){ $('#result').append('Estadio IIIA - SV 5a: 93%  10a: 88%<br>Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t2a"){ $('#result').append('Estadio IIIA - SV 5a: 93%  10a: 88%'); }
+									else if($("#t").val() === "t2b"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t3a"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t3b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t4a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									
+									else if($("#t").val() === "tx"){ $('#result').append('Estadio IIIA - SV 5a: 93%  10a: 88%'); }
+									else if($("#t").val() === "tis"){ $('#result').append('Estadio 0'); }
+									else if($("#t").val() === "t4b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									
+									else {$('#result').append('Estadio indefinido - Reveja as informações);}
+									
+								} else if ($("#n").val() === "n2b"){
+									
+									if($("#t").val() === "t0"){ $('#result').append('Estadio IIIC - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t3b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t4a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t4b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									
+									else if($("#t").val() === "tx"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "tis"){ $('#result').append('Estadio 0'); }
+									else if($("#t").val() === "t1a"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t1b"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t2a"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t2b"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									else if($("#t").val() === "t3a"){ $('#result').append('Estadio IIIB - SV 5a: 83%  10a: 77%'); }
+									
+									else {$('#result').append('Estadio indefinido - Reveja as informações');}
+									
+								} else if ($("#n").val() === "n2c"){
+									
+									if($("#t").val() === "t0"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t1a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t1b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t2a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t2b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t3a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t3b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t4a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t4b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									
+									else if($("#t").val() === "tx"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "tis"){ $('#result').append('Estadio 0'); }
+									
+									else {$('#result').append('Estadio indefinido - Reveja as informações');}
+									
+								} else if ($("#n").val() === "n3a"){
+									
+									if($("#t").val() === "t1a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t1b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t2a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t2b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t3a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t3b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t4a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t4b"){ $('#result').append('Estadio IIID - SV 5a: 32%  10a: 24 - segundo lote de fotes parte 1%'); }
+									
+									else if($("#t").val() === "tx"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "tis"){ $('#result').append('Estadio 0'); }
+									
+									else {$('#result').append('Estadio indefinido - Reveja as informações');}
+									
+								} else if ($("#n").val() === "n3b"){
+									
+									if($("#t").val() === "t0"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t1a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t1b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t2a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t2b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t3a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t3b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t4a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t4b"){ $('#result').append('Estadio IIID - SV 5a: 32%  10a: 24 - segundo lote de fotes parte 1%'); }
+									
+									else if($("#t").val() === "tx"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "tis"){ $('#result').append('Estadio 0'); }
+									
+									else {$('#result').append('Estadio indefinido - Reveja as informações');}
+									
+								} else if ($("#n").val() === "n3c"){
+									
+									if($("#t").val() === "t0"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t1a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t1b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t2a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t2b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t3a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t3b"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t4a"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "t4b"){ $('#result').append('Estadio IIID - SV 5a: 32%  10a: 24 - segundo lote de fotes parte 1%'); }
+									
+									else if($("#t").val() === "tx"){ $('#result').append('Estadio IIIC - SV 5a: 69%  10a: 60%'); }
+									else if($("#t").val() === "tis"){ $('#result').append('Estadio 0'); }
+									
+									else {$('#result').append('Estadio indefinido');}
+									
+								} else if ($("#n").val() === "nx"){
+									if($("#t").val() === "tis"){ $('#result').append('Estadio 0'); }
+									else if($("#t").val() === "t1a"){ $('#result').append('Estadio 0'); }
+									else if($("#t").val() === "t1b"){ $('#result').append('Estadio IB - SV 5a: 97%  10a: 94%'); }
+									else if($("#t").val() === "t2a"){ $('#result').append('Estadio IB - SV 5a: 97%  10a: 94%'); }
+									else if($("#t").val() === "t2b"){ $('#result').append('Estadio IIA - SV 5a: 94%  10a: 88%'); }
+									else if($("#t").val() === "t3a"){ $('#result').append('Estadio IIB - SV 5a: 87%  10a: 82%'); }
+									else if($("#t").val() === "t3b"){ $('#result').append('Estadio IIB - SV 5a: 87%  10a: 82%'); }
+									else if($("#t").val() === "t4a"){ $('#result').append('Estadio IIB - SV 5a: 87%  10a: 82%'); }
+									else if($("#t").val() === "t4b"){ $('#result').append('Estadio IIC - SV 5a: 82%  10a: 75%'); }
+									
+									else {$('#result').append('Estadio indefinido - Reveja as informações');}
+								}
+								
+							}
+							
+							$('#result').append('<br><br> <strong>' + $("#t").val() + ':</strong> ' + $("#t option:selected").text() + '<br><br>');
+							$('#result').append('<strong>' + $("#n").val() + ':</strong> ' + $("#n option:selected").text() + '<br><br>');
+							$('#result').append('<strong>' + $("#m").val() + ':</strong> ' + $("#m option:selected").text() + '<br><br>');
+							
+							
+							return false;
+							
+						});
+						
+					});
+				</script>
+				
+				<span id="result"></span>
+				
+			</div>
+			
+		</section>
+		
+	</body>
+</html>

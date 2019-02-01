@@ -1,0 +1,181 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th,  d, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video { 	margin: 0; 	padding: 0; 	border: 0; 	font-size: 100%; 	font: inherit; vertical-align: baseline; }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {	display: block;}
+body {	line-height: 1;}
+ol, ul {	list-style: none;}
+blockquote, q {	quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {	content: '';	content: none;}
+table {	border-collapse: collapse;	border-spacing: 0;}
+img {max-width: 100%; height: auto;}
+a {text-decoration: none; color: #E87500;}
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body {font-family: 'Lato', sans-serif;}
+p {margin: 0 0 1.5rem; line-height: 1.2;}
+strong {font-weight: 700;}
+select {max-width: 100%;}
+
+.home {border-top: 10px solid #ce7400;}
+#login {min-height: 98vh; background: #e4e4e4;}
+
+.home form {text-align: center; padding: 35px 5% 0; background: #fff;}
+.home input[type=text], .home input[type=password] {width: 90%; padding: 10px; margin-bottom: 10px;}
+.home input[type=submit], .all-events {background: #f2bd00; background: -moz-linear-gradient(top, #f2bd00 1%, #d37b00 100%); background: -webkit-linear-gradient(top, #f2bd00 1%,#d37b00 100%); background: linear-gradient(to bottom, #f2bd00 1%,#d37b00 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2bd00', endColorstr='#d37b00',GradientType=0 );
+padding: 15px 50px; font-weight: 700; color: #fff; border: none; border-radius: 5px; font-size: 15px;}
+
+.home fieldset {border: 1px solid #808080; padding: 15px 0;}
+.home legend {color: #808080; background: #fff; padding: 0 20px; margin: 0 auto;}
+
+#erro-login {display: inline-block; background: #ff3333; color: #fff; padding: 10px; border-radius: 5px; margin-bottom: 10px; width: 92%; font-weight: 700; }
+#criado-sucesso {display: inline-block; background: #3BAA1B; color: #fff; padding: 10px; border-radius: 5px; margin-bottom: 10px; width: 92%; font-weight: 700; }
+	
+.home .add-btn {padding: 15% 5% 0;}
+.home .add-btn a {color: #000;}
+
+.menu {max-width: 800px; margin: 0 auto; height: 75vh;}
+.menu img {width: 44%; float: left; margin: 0 4% 4%;}
+.menu .full {width: 92%;}
+.menu .odd {margin-right: 0;}
+
+header {background: #efefef; min-height: 4vh; color: #ce7400; padding: 2vh 4% 2vh; float: left; width: 92%;}
+.inicial header {margin-bottom: 2vh; }
+header a {color: #ce7400;}
+header div {width: 80%; float: left; font-size: 20px; font-size: 16px;}
+header div:first-child + div {text-align: right; width: 20%; margin-top: 10px; font-size: 20px;}
+header div:first-child + div a {margin-left: 5px;}
+
+#content {min-height: 70vh; padding: 0 5%; padding-bottom: 20vh; float: left; width: 90%;}
+
+#menu-inicial li {width: 48%; float: left; margin-bottom: 4%;}
+#menu-inicial li.big {width: 100%;}
+#menu-inicial li:nth-child(2), #menu-inicial li:nth-child(4) {margin-right: 4%;}
+#menu-inicial li img {width: 100%;}
+
+.inicial .owl-carousel.owl-loaded {float: left; margin-top: 15px;}
+
+#encontre {background: #ddd; padding: 10px; border-radius: 5px; float: left; width: 93%; margin-bottom: 30px;}
+#encontre input, #encontre select {width: 100%; margin-bottom: 5px;}
+#encontre input[type=text] {width: 98%;}
+#encontre input[type=submit] {background: #E87500; color: #fff; border: none; padding: 5px 0 8px;}
+.result-asso {text-transform: uppercase; min-height: 200px;  background: #e7e7e7; padding: 15px; border-radius: 3px; margin-bottom: 30px; float: left; line-height: 25px; width: 90%;}
+.result-asso img {margin: 0 auto; display: block; margin-bottom: 15px;}
+.title {padding: 5% 10%; background: #E87500; color: #fff;  margin-bottom: 20px; font-weight: 700; float: left; width: 80%;}
+.title img {float: right; vertical-align: middle;}
+.title span {margin-top: 12px; display: inline-block;}
+
+footer {position: fixed; bottom: 0; z-index: 9999; width: 100%;}
+footer > ul {float: left; width: 100%; background: #E87500;}
+footer > ul > li {width: 21%; float: left; text-align: center; position: relative;}
+footer > ul > li.big {width: 37%;}
+footer > ul > li > a {display: block;}
+footer img {max-height: 10vh;}
+footer ul ul {position: absolute; top: -299px; width: 100%; z-index: 9999; left: 0;  text-align: left; background: #fff; display: none; min-width: 280px; padding: 8px 15px 8px 0;}
+footer > ul > li.big ul {min-width: 125px; padding: 0 15px 0 0; top: -96px;  text-align: center;}
+footer ul ul a {color: #E87500; font-weight: 700;}
+footer ul ul img {vertical-align: middle;}
+
+.entry-header, .edit-link {display: none;}
+
+.wpb_button, .wpb_content_element, ul.wpb_thumbnails-fluid > li {margin-bottom: 0 !important;}
+
+#warning {position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.5); z-index: 99999; display: none;}
+#warning ul {width: 75%; float: right; padding: 20px 0; background: #E87500; height: 100vh; overflow-y: auto; border-left: 1px solid #aaa;}
+#warning ul li {padding: 10px 20px 15px; margin-bottom: 5px; color: #fff; font-size: 13px;}
+#warning ul li a {color: #fff; font-weight: 700; margin-bottom: 3px; display: block;}
+
+.archive-title a, .post-title {font-weight: 700; margin-bottom: 20px; font-size: 17px; display: block;}
+.post-title {color: #E87500;}
+.archive-title a {color: #4D4D4D;}
+.archive-title svg { color: #E87500;}
+
+.cat-name, .back-arrow {display: block; width: 50%; float: left; margin: 15px 0; color: #fff;}
+.cat-name span {background: #E87500; padding: 5px 10px;}
+.back-arrow {text-align: right;}
+.back-arrow img {width: 30px;}
+
+.calculadora #content select {margin-bottom: 8px; height: 30px;}
+.calculadora #content input {width: 100%; background: #E87500; padding: 10px; font-weight: 700; color: #fff; border: 0;}
+.calculadora #content #result strong {text-transform: uppercase;}
+
+.news-list {padding-bottom: 15px; margin-bottom: 15px; color: #4D4D4D; text-decoration: none; display: block; font-weight: 700; line-height: 20px;}
+.news-list li {    margin-bottom: 20px;   border-bottom: 1px solid #ddd; padding-bottom: 10px;}
+.news-list h4 {margin-bottom: 5px;}
+.news-list a {color: #4D4D4D;}
+.news-list svg { color: #E87500; min-width: 20px;}
+.news-list ul {margin-left: 35px; margin-top: 20px;}
+.news-list ul li {border-bottom: none; margin-bottom: 0;}
+.news-list ul li a {font-weight: 400;}
+
+#header-initial {    width: 20px;    height: 18px;    border-radius: 50px;    background: #fff;    margin-right: 5px;    font-size: 13px;    text-align: center;    vertical-align: middle;    padding: 14px 10px 8px;    display: inline-block;}
+
+#new-post label {margin-bottom: 10px; display: block;}
+#new-post input[type=text], #new-post textarea {width: 98%; margin-bottom: 20px;}
+#new-post input[type=text] {height: 30px;}
+#new-post textarea {height: 120px;}
+#new-post button, #add-topic {background: #E87500; color: #fff; border: none; padding: 10px 20px; font-weight: 700; font-size: 15px; float: right;}
+
+.sucess-warning {background: #00cd00; display: block; padding: 15px; margin-bottom: 20px; color: #fff; font-weight: 700;}
+
+.topic-list {width: 100%; float: left; margin-top: 20px; list-style-type: none;}
+.topic-list li {border: 1px solid #E87500; background: #ededed; padding: 10px; margin-bottom: 15px;}
+.topic-list li a {color: #4A4A4A;}
+.topic-list li h4 {margin-bottom: 15px; font-size: 18px; font-weight: 700;}
+.topic-list li .date {margin-bottom: 10px;}
+.topic-list li .date, .topic-list li .autor {font-size: 12px; display: inline-block;}
+
+.topic-content {background: #ddd; padding: 7px; border: 1px solid #666;}
+.topic-content .date, .topic-content .autor {font-size: 11px;}
+.topic-content strong {display: block; margin-top: 10px;}
+
+#reply-topic textarea {width: 84%; height: 35px;margin: 0;padding: 5px 51px 5px 5px;}
+#reply-topic button {position: absolute; top: 0px; right: 0; font-size: 40px; background: #E87500; border: none; color: #fff; padding-right: 10px;}
+
+.resp-title {margin-bottom: 20px; display: block;  font-size: 12px;  text-align: center; border-bottom: 1px solid #686868; color: #686868; padding-bottom: 3px;}
+
+.delete-topic {color: #ff0000 !important; font-size: 12px; display: block; text-align: right;}
+
+.search-div {width: 92% !important; left: 0; top: 75px; padding: 0 4%; display: none; margin-top: 20px;}
+.search-div input {width: 80%; float: left; margin: 0; padding: 20px 10px;}
+.search-div button {width: 20%; float: left;margin: 0;padding: 0;background: #E87500;color: #fff;border: 1px solid #666;height: 59px;font-size: 25px;}
+
+.navigation h2 {display: none;}
+.page-numbers {padding: 10px;border: 1px solid #000;display: inline-block;margin-top: 30px; }
+.nav-links a {color: #E87500;}
+
+.atlas-galery  {margin-bottom: 30px; background: #e7e7e7; border: 1px solid #666; width: 100%; float: left;}
+.atlas-galery .img-galery {width: 30%; float: left;}
+.atlas-galery .title-galery {width: 62%; float: left; padding: 10px 4%; font-weight: 700; font-size: 14px; min-height: 70px; text-transform: uppercase;}
+.atlas-galery .imgs-galery {width: 100%; float: left; border-top: 1px solid #000;  display: none;}
+.atlas-galery .imgs-galery p {text-transform: uppercase; text-align: center; margin-top: 1rem;}
+.atlas-galery .galery-expand {float: left; width: 100%;text-align: center;font-size: 11px;border-top: 1px solid #000;padding: 2px 0 3px;margin-top: -3px;}
+#pesquisa-lesoes {width: 92%; margin: 0 0 20px; padding: 8px 4%;}
+
+#minha-conta-head {background: #E87500; padding: 4vh 4% 3vh; float: left; width: 92%; font-size: 22px; color: #fff;}
+#minha-conta-head a {color: #fff;}
+#minha-conta-head #header-initial {color: #E87500; display: block; width: 28px;font-weight: 700;font-size: 17px; padding: 14px 10px; margin-bottom: 10px;}
+
+.my-acc {margin-top: 40px;}
+.my-acc a {color: #4D4D4D;border-bottom: 1px solid #B2B2B2;display: block;margin-bottom: 15px;padding-bottom: 15px;font-size: 20px;}
+.my-acc a svg {color: #E87500; min-width: 22px !important;}
+
+#pesquisa-topicos {width: 92%; margin: 20px 0 0px; padding: 8px 4%;}
+
+.wpcf7-text, .wpcf7-email, .wpcf7-textarea {width: 98%; margin-bottom: 5px;}
+.wpcf7-textarea {height: 100px;}
+.wpcf7-submit {background: #E87500; color: #fff; border: none; padding: 10px 20px; font-weight: 700; font-size: 13px;}
+
+#loader {margin: 0 auto; display: block;}
+
+.melanoma h2 {font-size: 1.6rem; font-weight: 500; color: #E87500; margin-bottom: 10px;}
+.melanoma h4 {font-size: 1.2rem; font-weight: 500; color: #E87500; margin-bottom: 20px;}
+.melanoma #content ul {margin-left: 1.5rem; list-style-type: disclosure-closed;}
+.melanoma #content ul li {margin-bottom: 1rem;}
+
+.inicial-icon svg {font-size: 27px; margin: 8px; vertical-align: middle; color: #E87500;}
+
+.ajuda input[type=text], .ajuda textarea, .ajuda input[type=email] {width: 98%; margin-bottom: 20px;}
+.ajuda input[type=submit] {background: #E87500;color: #fff; padding: 10px 40px; border: none;}

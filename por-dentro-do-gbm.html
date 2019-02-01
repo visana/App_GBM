@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+
+		<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *;" />
+		
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-cookie.js"></script>	
+		<script src="js/jquery-ui.js"></script> 
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+		<link rel="stylesheet" href="css/owl.carousel.css">
+    	<link rel="stylesheet" href="css/owl.theme.default.css">
+		<link rel="stylesheet" href="css/fontawesome.css">
+    	<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.colorbox-min.js"></script>
+		<script src="custom.js"></script>
+		
+		<title>APP GBM</title>
+	</head>	
+		
+	<body>
+		
+		<section class="title">
+			<span>Por dentro do GBM</span>
+			<img src="http://gbm.org.br/wp-content/uploads/2018/03/por-dentro.png" alt="" width="49">
+		</section>
+		
+		<section id="content">
+	
+			<ul class="news-list">
+				<li>
+					<strong>
+						<i class="fas fa-caret-right"></i>
+						<a href="novidades.html">Novidades</a>
+					</strong>
+				</li>
+				
+				<script type="text/javascript">
+					$(document).ready(function() {
+
+						 var url="http://gbm.appsbdrj.kinghost.net/revista.php";
+						 $.getJSON(url,function(result){
+							 $.each(result, function(i, field){
+								 $("#revista").attr("href", field.link);
+							 });
+						 });
+
+					});
+				</script>
+				
+				<li>
+					<strong>
+						<i class="fas fa-caret-right"></i>
+						<a href="" target="_blank" id="revista" rel="noopener">Revista do melanoma</a>
+					</strong>
+				</li>
+				<li>
+					<strong>
+						<i class="fas fa-caret-right"></i>
+						<a href="agenda-de-eventos.html" rel="noopener">Agenda de eventos</a>
+					</strong>
+				</li>
+			</ul>
+			
+		</section>
+		
+	</body>
+</html>

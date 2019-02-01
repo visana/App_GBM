@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+
+		<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *;" />
+		
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-cookie.js"></script>	
+		<script src="js/jquery-ui.js"></script> 
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+		<link rel="stylesheet" href="css/owl.carousel.css">
+    	<link rel="stylesheet" href="css/owl.theme.default.css">
+		<link rel="stylesheet" href="css/fontawesome.css">
+    	<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.colorbox-min.js"></script>
+		<script src="custom.js"></script>
+		
+		<title>APP GBM</title>
+	</head>	
+		
+	<body>
+		
+		<script>
+			jQuery( document ).ready(function($) {
+				$('#nome').val(Cookies.get('nome'));
+				$('#email').val(Cookies.get('email'));
+				
+				$("#enviar").click(function() {
+					var nome = $("#nome").val();
+					var email = $("#email").val();
+					var telefone = $("#telefone").val();
+					var mensagem = $("#mensagem").val();
+					
+					var data = {
+						nome : $("#nome").val(),
+						email : $("#email").val(),
+						telefone : $("#telefone").val(),
+						mensagem : $("#mensagem").val()
+					};
+					
+					$.ajax({
+						type: "POST",
+						url: "http://gbm.appsbdrj.kinghost.net/email/ajuda-email.php",
+						data: data,
+						success: function(){
+							$('.success').fadeIn(1000);
+							alert('Enviou caralho');
+						}
+					});
+
+					return false;
+				});
+				
+			});
+		</script>
+		
+		<section class="title">
+			<span>Ajuda</span>
+			<img src="http://gbm.org.br/app/wp-content/uploads/2018/03/help.png" alt="">
+		</section>
+		
+		<section id="content">
+			
+			<div class="success" style="display: none;">Mensagem enviada com sucesso!</div>
+			
+			<div class="ajuda">
+				<input type="text" name="nome" maxlength="40" id="nome" />
+				<input type="email" name="email" maxlength="30" id="email" />
+				<input type="text" name="telefone" maxlength="14" placeholder="Telefone" id="telefone" />
+				<textarea name="mensagem" cols="16" rows="5" placeholder="Mesangem" id="mensagem"></textarea>
+				<input type="submit" id="enviar" value="Enviar" />
+			</div>
+			
+		</section>
+		
+	</body>
+</html>

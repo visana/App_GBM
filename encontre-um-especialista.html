@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+
+		<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *;" />
+		
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-cookie.js"></script>	
+		<script src="js/jquery-ui.js"></script> 
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+		<link rel="stylesheet" href="css/owl.carousel.css">
+    	<link rel="stylesheet" href="css/owl.theme.default.css">
+		<link rel="stylesheet" href="css/fontawesome.css">
+    	<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.colorbox-min.js"></script>
+		<script src="custom.js"></script>
+		
+		<title>APP GBM</title>
+	</head>	
+		
+	<body>
+		
+		<section class="title">
+			<span>Encontre um especialista</span>
+			<img src="images/encontre-branco.png" alt="">
+		</section>
+		
+		<section id="content">
+	
+			<form action="" id="encontre" method="post">
+				<input type="text" placeholder="Nome" id="keyword" />
+
+				<select id="especialidade">
+					<option value="">Selecione um especialidade</option>
+					<option value="ACUPUNTURA">ACUPUNTURA</option>
+					<option value="ALERGIA E IMUNOLOGIA">ALERGIA E IMUNOLOGIA</option>
+					<option value="ANESTESIOLOGIA">ANESTESIOLOGIA</option>
+					<option value="ANGIOLOGIA">ANGIOLOGIA</option>
+					<option value="CANCEROLOGIA">CANCEROLOGIA (ONCOLOGIA)</option>
+					<option value="CARDIOLOGIA">CARDIOLOGIA</option>
+					<option value="CIRURGIA DA MAO">CIRURGIA DA MÃO</option>
+					<option value="CIRURGIA DE CABECA E PESCOCO">CIRURGIA DE CABEÇA E PESCOÇO</option>
+					<option value="CIRURGIA DO APARELHO DIGESTIVO">CIRURGIA DO APARELHO DIGESTIVO</option>
+					<option value="CIRURGIA GERAL">CIRURGIA GERAL</option>
+					<option value="CIRURGIA PLASTICA">CIRURGIA PLÁSTICA</option>
+					<option value="CIRURGIA TORÁCICA">CIRURGIA TORÁCICA</option>
+					<option value="CIRURGIA VASCULAR">	CIRURGIA VASCULAR</option>
+					<option value="CLINICA MEDICA">CLÍNICA MÉDICA</option>
+					<option value="COLOPROCTOLOGIA">COLOPROCTOLOGIA</option>
+					<option value="DERMATOLOGIA">DERMATOLOGIA</option>
+					<option value="ENDOCRINOLOGIA E METABOLOGIA">ENDOCRINOLOGIA E METABOLOGIA</option>
+					<option value="ENDOSCOPIA">ENDOSCOPIA</option>
+					<option value="GASTROENTEROLOGIA">GASTROENTEROLOGIA</option>
+					<option value="GENÉTICA MEDICA">GENÉTICA MÉDICA</option>
+					<option value="GERIATRIA">GERIATRIA</option>
+					<option value="GINECOLOGIA E OBSTETRICIA">GINECOLOGIA E OBSTETRÍCIA</option>
+					<option value="HEMATOLOGIA E HEMOTERAPIA">HEMATOLOGIA E HEMOTERAPIA</option>
+					<option value="HOMEOPATIA">HOMEOPATIA</option>  
+					<option value="INFECTOLOGIA">INFECTOLOGIA</option>
+					<option value="MASTOLOGIA">MASTOLOGIA</option>
+					<option value="MEDICINA DE FAMILIA E COMUNIDADE">MEDICINA DE FAMÍLIA E COMUNIDADE</option>
+					<option value="MEDICINA DO TRABALHO">MEDICINA DO TRABALHO</option>
+					<option value="MEDICINA DE TRAFEGO">MEDICINA DE TRÁFEGO</option>
+					<option value="MEDICINA ESPORTIVA">MEDICINA ESPORTIVA</option>
+					<option value="MEDICINA FÍSICA E REABILITAÇÃO">MEDICINA FÍSICA E REABILITAÇÃO</option>
+					<option value="MEDICINA INTENSIVA">MEDICINA INTENSIVA</option>
+					<option value="MEDICINA LEGAL">MEDICINA LEGAL</option>
+					<option value="MEDICINA NUCLEAR">MEDICINA NUCLEAR</option>
+					<option value="MEDICINA PREVENTIVA E SOCIAL">MEDICINA PREVENTIVA E SOCIAL</option>
+					<option value="NEFROLOGIA">NEFROLOGIA</option>
+					<option value="NEUROCIRURGIA">NEUROCIRURGIA</option>
+					<option value="NEUROLOGIA">NEUROLOGIA</option>
+					<option value="NUTROLOGIA">NUTROLOGIA</option>
+					<option value="OFTALMOLOGIA">OFTALMOLOGIA</option>
+					<option value="ORTOPEDIA E TRAUMATOLOGIA">ORTOPEDIA E TRAUMATOLOGIA</option>
+					<option value="OTORRINOLARINGOLOGIA">OTORRINOLARINGOLOGIA</option>
+					<option value="PATOLOGIA">PATOLOGIA</option>
+					<option value="PEDIATRIA">PEDIATRIA</option>
+					<option value="PNEUMOLOGIA">PNEUMOLOGIA</option>
+					<option value="PSIQUIATRIA">PSIQUIATRIA</option>
+					<option value="RADIOLOGIA">RADIOLOGIA</option>
+					<option value="REUMATOLOGIA">REUMATOLOGIA</option>
+					<option value="UROLOGIA">UROLOGIA</option>
+				</select>
+
+				<select id="cidade">
+					<option value="">Selecione uma cidade</option>
+					<option value="ADAMANTINA">ADAMANTINA</option>
+					<option value="ALEGRETE">ALEGRETE</option>
+					<option value="Americana">AMERICANA</option>
+					<option value="AMPARO">AMPARO</option>
+					<option value="Andradas">ANDRADAS</option>
+					<option value="Aracaju">ARACAJU</option>
+					<option value="ARAGUAÍNA">ARAGUAÍNA</option>
+					<option value="ARAGUARI">ARAGUARI</option>
+					<option value="ARARAQUARA">ARARAQUARA</option>
+					<option value="ARARUAMA">ARARUAMA</option>
+					<option value="ARAXÁ">ARAXÁ</option>
+					<option value="ASSIS">ASSIS</option>
+					<option value="AVARÉ">AVARÉ</option>
+					<option value="BALNEÁRIO CAMBORIÚ">BALNEÁRIO CAMBORIÚ</option>
+					<option value="Balneário Piçarras">BALNEÁRIO PIÇARRAS</option>
+					<option value="Barbacena">BARBACENA</option>
+					<option value="BARRETOS">BARRETOS</option>
+					<option value="BARUERI">BARUERI</option>
+					<option value="BAURU">BAURU</option>
+					<option value="BELA CRUZ">BELA CRUZ</option>
+					<option value="BELÉM">BELÉM</option>
+					<option value="BELO HORIZONTE">BELO HORIZONTE</option>
+					<option value="Betim">BETIM</option>
+					<option value="BIGUAÇU">BIGUAÇU</option>
+					<option value="BLUMENAU">BLUMENAU</option>
+					<option value="BOA VISTA">BOA VISTA</option>
+					<option value="BOM JESUS DA LAPA">BOM JESUS DA LAPA</option>
+					<option value="BOTUCATU">BOTUCATU</option>
+					<option value="Bragança Paulista">BRAGANÇA PAULISTA</option>
+					<option value="BRASÍLIA">BRASÍLIA</option>
+					<option value="BRUSQUE">BRUSQUE</option>
+					<option value="Cabo Frio">CABO FRIO</option>
+					<option value="CACHOEIRA DO SUL">CACHOEIRA DO SUL</option>
+					<option value="CAÇAPAVA">CAÇAPAVA</option>
+					<option value="CALDAS NOVAS">CALDAS NOVAS</option>
+					<option value="CAMBÉ">CAMBÉ</option>
+					<option value="CAMPINA GRANDE">CAMPINA GRANDE</option>
+					<option value="CAMPINAS">CAMPO GRANDE</option>
+					<option value="CAMPOS DOS GOYTACAZES">CAMPOS DOS GOYTACAZES</option>
+					<option value="Capão da Canoa">CAPÃO DA CANOA</option>
+					<option value="CARAZINHO">CARAZINHO</option>
+					<option value="CARUARU">CARUARU</option>
+					<option value="CASCAVEL">CASCAVEL</option>
+					<option value="CATAGUASES">CATAGUASES</option>
+					<option value="CATALÃO">CATALÃO</option>
+					<option value="CATANDUVA">CATANDUVA</option>
+					<option value="CAXIAS DO SUL">CAXIAS DO SUL</option>
+					<option value="CÁCERES">CÁCERES</option>
+					<option value="CHAPECÓ">CHAPECÓ</option>
+					<option value="Conselheiro Lafaiete">CONSELHEIRO LAFAIATE</option>
+					<option value="CRATEÚS">CRATEÚS</option>
+					<option value="CRICIÚMA">CRICIÚMA</option>
+					<option value="CRUZEIRO">CRUZEIRO</option>
+					<option value="CUIABÁ">CUIABÁ</option>
+					<option value="CURITIBA">CURITIBA</option>
+					<option value="DIADEMA">DIADEMA</option>
+					<option value="DIVINÓPOLIS">DIVINÓPOLIS</option>
+					<option value="DUARTINA">DUARTINA</option>
+					<option value="ERECHIM">ERECHIM</option>
+					<option value="EUNÁPOLIS">EUNÁPOLIS</option>
+					<option value="FEIRA DE SANTANA">FEIRA DE SANTANA</option>
+					<option value="FERNANDÓPOLIS">FERNANDÓPOLIS</option>
+					<option value="FLORES DA CUNHA">FLORES DA CUNHA</option>
+					<option value="FLORIANÓPOLIS">FLORIANÓPOLIS</option>
+					<option value="FORMIGA">FORMIGA</option>
+					<option value="Fortaleza">FORTALEZA</option>
+					<option value="FOZ DO IGUAÇU">FOZ DO IGUAÇU</option>
+					<option value="FREDERICO WESTPHALEN">FREDERICO WESTPHALEN</option>
+					<option value="GOIÂNIA">GOIÂNIA</option>
+					<option value="GOVERNADOR VALADARES">GOVERNADOR VALADARES</option>
+					<option value="GRAMADO">GRAMADO</option>
+					<option value="GUARAPUAVA">GUARAPUAVA</option>
+					<option value="GUARUJÁ">GUARUJÁ</option>
+					<option value="GUARULHOS">GUARULHOS</option>
+					<option value="HIDROLÂNDIA">HIDROLÂNDIA</option>
+					<option value="IBITINGA">IBITINGA</option>
+					<option value="IJUÍ">IJUÍ</option>
+					<option value="Ilhéus">Ilhéus</option>
+					<option value="INDAIATUBA">INDAIATUBA</option>
+					<option value="IPORÃ">IPORÃ</option>
+					<option value="ITABUNA">ITABUNA</option>
+					<option value="ITAJAÍ">ITAJAÍ</option>
+					<option value="ITAJUBÁ">ITAJUBÁ</option>
+					<option value="ITANHAÉM">ITANHAÉM</option>
+					<option value="ITANHANDU">ITANHANDU</option>
+					<option value="ITAPECERICA DA SERRA">ITAPECERICA DA SERRA</option>
+					<option value="ITAPEMA">ITAPEMA</option>
+					<option value="ITAPERUNA">ITAPERUNA</option>
+					<option value="ITU">ITU</option>
+					<option value="ITUVERAVA">ITUVERAVA</option>
+					<option value="Jaboatão dos Guararapes">JABOTÃO DOS GUARARAPES</option>
+					<option value="Jaguariúna">JAGUARIÚNA</option>
+					<option value="JALES">JALES</option>
+					<option value="Jaú">JAÚ</option>
+					<option value="JEQUIE">JEQUIE</option>
+					<option value="JI-PARANÁ">JI-PARANÁ</option>
+					<option value="JOAÇABA">JOAÇABA</option>
+					<option value="JOÃO PESSOA">JOÃO PESSOA</option>
+					<option value="JOINVILLE">JOINVILLE</option>
+					<option value="JUAZEIRO">JUAZEIRO</option>
+					<option value="JUAZEIRO DO NORTE">JUAZEIRO DO NORTE</option>
+					<option value="JUIZ DE FORA">JUIZ DE FORA</option>
+					<option value="JUNDIAÍ">JUNDIAÍ</option>
+					<option value="LAGES">LAGES</option>
+					<option value="LAGO SUL">LAGO SUL</option>
+					<option value="LAJEADO">LAJEADO</option>
+					<option value="LAURO DE FREITAS">LAURO DE FREITAS</option>
+					<option value="LEME">LEME</option>
+					<option value="LENÇÓIS PAULISTA">LENÇÓIS PAULISTA</option>
+					<option value="LIBERDADE">LIBERDADE</option>
+					<option value="LIMEIRA">LIMEIRA</option>
+					<option value="LINHARES">LINHARES</option>
+					<option value="LONDRINA">LONDRINA</option>
+					<option value="LORENA">LORENA</option>
+					<option value="MACAÉ">MACAÉ</option>
+					<option value="Macapá">MACAPÁ</option>
+					<option value="Maceió">MACEIÓ</option>
+					<option value="MANAUS">MANAUS</option>
+					<option value="Maringá">MARINGÁ</option>
+					<option value="MARÍLIA">MARÍLIA</option>
+					<option value="Matão">MATÃO</option>
+					<option value="MAUÁ">MAUÁ</option>
+					<option value="MOCOCA">MOCOCA</option>
+					<option value="MOGI DAS CRUZES">MOGI DAS CRUZES</option>
+					<option value="MOGI GUAÇU">MOGI GUAÇU</option>
+					<option value="MOGI MIRIM">MOGI MIRIM</option>
+					<option value="MONTENEGRO">MONTENEGRO</option>
+					<option value="MONTES CLAROS">MONTES CLAROS</option>
+					<option value="MURIAÉ">MURIAÉ</option>
+					<option value="NATAL">NATAL</option>
+					<option value="NILÓPOLIS">NILÓPOLIS</option>
+					<option value="NITERÓI">NITERÓI</option>
+					<option value="NOVA CANTU">NOVA CANTU</option>
+					<option value="NOVA ERA DO IMIGRANTE">NOVA ERA DO IMIGRANTE</option>
+					<option value="NOVA FRIBURGO">NOVA FRIBURGO</option>
+					<option value="Nova Iguaçu">NOVA IGUAÇU</option>
+					<option value="NOVA PRATA">NOVA PRATA</option>
+					<option value="Novo Hamburgo">NOVO HAMBURGO</option>
+					<option value="OLINDA">OLINDA</option>
+					<option value="OSASCO">OSASCO</option>
+					<option value="OSÓRIO">OSÓRIO</option>
+					<option value="OURINHOS">OURINHOS</option>
+					<option value="PALMAS">PALMAS</option>
+					<option value="PALMEIRAS DE GOIÁS">PALMEIRAS DE GOIÁS</option>
+					<option value="PARACATU">PARACATU</option>
+					<option value="PARANAGUÁ">PARANAGUÁ</option>
+					<option value="PASSO FUNDO">PASSO FUNDO</option>
+					<option value="PASSOS">PASSOS</option>
+					<option value="PATO BRANCO">PATO BRANCO</option>
+					<option value="PATOS">PATOS</option>
+					<option value="PATOS DE MINAS">PATOS DE MINAS</option>
+					<option value="Patrocínio">PATROCÍNIO</option>
+					<option value="PAULINIA">PAULINIA</option>
+					<option value="PAULO AFONSO">PAULO AFONSO</option>
+					<option value="PELOTAS">PELOTAS</option>
+					<option value="PETROLINA">PETROLINA</option>
+					<option value="PETRÓPOLIS">PETRÓPOLIS</option>
+					<option value="PINDAMONHANGABA">PINDAMONHANGABA</option>
+					<option value="PIRACICABA">PIRACICABA</option>
+					<option value="PIRASSUNUNGA">PIRASSUNUNGA</option>
+					<option value="Poços de Caldas">POÇO DE CALDAS</option>
+					<option value="Ponta Grossa">PONTA GROSSA</option>
+					<option value="PORTO ALEGRE">PORTO ALEGRE</option>
+					<option value="Porto Seguro">Porto Seguro</option>
+					<option value="PORTO VELHO">PORTO VELHO</option>
+					<option value="POUSO ALEGRE">POUSO ALEGRE</option>
+					<option value="PRESIDENTE PRUDENTE">PRESIDENTE PRUDENTE</option>
+					<option value="RECIFE">RECIFE</option>
+					<option value="REDENÇÃO">REDENÇÃO</option>
+					<option value="RIBEIRÃO PRETO">RIBEIRÃO PRETO</option>
+					<option value="RIO DE JANEIRO">RIO DE JANEIRO</option>
+					<option value="RIO DO SUL">RIO DO SUL</option>
+					<option value="RIO NEGRINHO">RIO NEGRINHO</option>
+					<option value="RIO VERDE">RIO VERDE</option>
+					<option value="SALINAS">SALINAS</option>
+					<option value="SALTO">SALTO</option>
+					<option value="SALVADOR">SALVADOR</option>
+					<option value="sananduva">SANANDUVA</option>
+					<option value="SANTA CRUZ DO SUL">SANTA CRUZ DO SUL</option>
+					<option value="SANTA MARIA">SANTA MARIA</option>
+					<option value="SANTA RITA DO PASSA QUATRO">SANTA RITA DO PASSA QUATRO</option>
+					<option value="SANTA ROSA">SANTA ROSA</option>
+					<option value="SANTANA DE PARNAÍBA">SANTANA DE PARNAÍBA</option>
+					<option value="SANTO ANDRÉ">SANTO ANDRÉ</option>
+					<option value="SANTO ANTÔNIO DE JESUS">SANTO ANTÔNIO DE JESUS</option>
+					<option value="SANTOS">SANTOS</option>
+					<option value="SAO JOSE DO RIO PADARDO">SAO JOSE DO RIO PADARDO</option>
+					<option value="SAO JOSE RIO PRETO">SAO JOSE RIO PRETO</option>
+					<option value="SÃO PAULO">SÃO PAULO</option>
+					<option value="SARANDI">SARANDI</option>
+					<option value="SÃO BERNARDO DO CAMPO">SÃO BERNARDO DO CAMPO</option>
+					<option value="SÃO CAETANO DO SUL">SÃO CAETANO DO SUL</option>
+					<option value="SÃO CARLOS">SÃO CARLOS</option>
+					<option value="SÃO JOSÉ">SÃO JOSÉ</option>
+					<option value="SÃO JOSÉ DO RIO PRETO">SÃO JOSÉ DO RIO PRETO</option>
+					<option value="SÃO JOSÉ DOS CAMPOS">SÃO JOSÉ DOS CAMPOS</option>
+					<option value="São Leopoldo">SÃO LEOPOLDO</option>
+					<option value="SÃO LUÍS">SÃO LUÍS</option>
+					<option value="SÃO MARCOS">SÃO MARCOS</option>
+					<option value="SETE LAGOAS">SETE LAGOAS</option>
+					<option value="SINOP">SINOP</option>
+					<option value="SOBRAL">SOBRAL</option>
+					<option value="SOCORRO">SOCORRO</option>
+					<option value="SOROCABA">SOROCABA</option>
+					<option value="SORRISO">SORRISO</option>
+					<option value="TAGUATINGA">TAGUATINGA</option>
+					<option value="TANGARÁ DA SERRA">TANGARÁ DA SERRA</option>
+					<option value="TAPATINGÁ">TAPATINGÁ</option>
+					<option value="TAPERA">TAPERA</option>
+					<option value="TATUÍ">TATUÍ</option>
+					<option value="TAUBATÉ">TAUBATÉ</option>
+					<option value="Teixeira de Freitas">TEIXEIRA DE FREITAS</option>
+					<option value="Teresina">TERESINA</option>
+					<option value="TERESÓPOLIS">TERESÓPOLIS</option>
+					<option value="Tietê">TIETÊ</option>
+					<option value="TOLEDO">TOLEDO</option>
+					<option value="TORRES">TORRES</option>
+					<option value="Tremembé">TREMEMBÉ</option>
+					<option value="TRÊS BARRAS DO PARANÁ">TRÊS BARRAS DO PARANÁ</option>
+					<option value="Três de Maio">TRÊS DE MAIO</option>
+					<option value="TRÊS PONTAS">TRÊS PONTAS</option>
+					<option value="TRÊS RIOS">TRÊS RIOS</option>
+					<option value="TRINDADE">TRINDADE</option>
+					<option value="TUBARÃO">TUBARÃO</option>
+					<option value="UBERABA">UBERABA</option>
+					<option value="UBERLÂNDIA">UBERLÂNDIA</option>
+					<option value="Uruguaiana">URUGUAIANA</option>
+					<option value="VALENCIA">VALENCIA</option>
+					<option value="VALINHOS">VALINHOS</option>
+					<option value="VARGINHA">VARGINHA</option>
+					<option value="VILA VELHA">VILA VELHA</option>
+					<option value="VITÓRIA">VITÓRIA</option>
+					<option value="VOLTA REDONDA">VOLTA REDONDA</option>
+					<option value="Votuporanga">VOTUPORANGA</option>
+					<option value="WURZBURG">WURZBURG</option>
+				</select>	
+
+				<select id="estado">
+					<option value="">Selecione um estado</option>
+					<option value="AC">ACRE</option>
+					<option value="AL">ALAGOAS</option>
+					<option value="AP">AMAPÁ</option>
+					<option value="AM">AMAZONAS</option>
+					<option value="BA">BAHIA</option>
+					<option value="CE">CEARÁ</option>
+					<option value="DF">DISTRITO FEDERAL</option>
+					<option value="ES">ESPIRITO SANTO</option>
+					<option value="GO">GOIÁS</option>
+					<option value="MA">MARANHÃO</option>
+					<option value="MS">MATA GROSSO DO SUL</option>
+					<option value="MT">MATO GROSSO</option>
+					<option value="MG">MINAS GERAIS</option>
+					<option value="PA">PARÁ</option>
+					<option value="PB">PARAÍBA</option>
+					<option value="PR">PARAnÁ</option>
+					<option value="PE">PERNAMBUCO</option>
+					<option value="PI">PIAUÍ</option>
+					<option value="RJ">RIO DE JANEIRO</option>
+					<option value="RN">RIO GRANDE DO NORTE</option>
+					<option value="RS">RIO GRANDE DO SUL</option>
+					<option value="RO">RONDÔNIA</option>
+					<option value="RR">RORAIMA</option>
+					<option value="SC">SANTA CATARINA</option>
+					<option value="SP">SÃO PAULO</option>
+					<option value="SE">SERGIPE</option>
+					<option value="TO">TOCANTINS</option>
+				</select>
+
+				<input type="submit" value="Pesquisar" id="enviar" />
+			</form>
+			
+			<script type="text/javascript">
+				$(document).ready(function() {
+					
+					$('#enviar').click(function(){
+						
+						var keyword = $('#keyword').val();
+						var especialidade = $('#especialidade').val();
+						var cidade = $('#cidade').val();
+						var estado = $('#estado').val();
+						
+						var url="http://gbm.appsbdrj.kinghost.net/associados.php?texto=" + keyword + "&especialidade=" + especialidade + "&cidade=" + cidade + "&estado=" + estado;
+						
+						$("#result-asso").empty();
+						
+						$.getJSON(url,function(result){
+
+							$.each(result, function(i, field){
+								if( field.status === "Failed" ) {
+									$('#result-asso').html('<span id="erro-login">Nenhum resultado encontrado para sua busca.<span>');
+								} else {
+									$("#result-asso").append('<div class="result-asso"><img src="' + field.imagem + '" alt="" class="img-result" style="max-height: 170px; border-radius: 10px; max-width: 150px;" /><strong style="color: rgb(233,116,0);">'  + field.nome +  '</strong><br><strong>Especialidade:</strong> ' + field.especialidade + '<br><strong>Telefone:</strong> '  + field.telefone + '<br><strong>CRM:</strong> ' + field.crm + ' / <strong>RQE:</strong> ' + field.rqe +  '<br><strong>Endereço:</strong> ' + field.endereco +  '</br><strong>Cidade:</strong> ' + field.cidade + ' - ' + field.uf + '</div>');
+								}
+							});
+
+						});
+						return false;
+						
+					});
+
+				});
+			</script>
+			<img src="images/loader.gif" id="loader" alt="" style="display: none;">
+			<div id="result-asso">
+				
+			</div>
+			
+		</section>
+		
+	</body>
+</html>

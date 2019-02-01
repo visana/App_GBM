@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+		
+		<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *;" />
+		
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-cookie.js"></script>	
+		<script src="js/jquery-ui.js"></script> 
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+		<link rel="stylesheet" href="css/owl.carousel.css">
+    	<link rel="stylesheet" href="css/owl.theme.default.css">
+		<link rel="stylesheet" href="css/fontawesome.css">
+    	<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.colorbox-min.js"></script>
+		<script src="custom.js"></script>
+		
+		<title>APP GBM</title>
+	</head>	
+		
+	<body>
+		
+		<section class="title">
+			<span>Criar Tópico</span>
+			<img src="http://gbm.org.br/app/wp-content/uploads/2018/03/chat-1.png" alt="">
+		</section>
+		
+		<section id="content">
+
+			<script>
+				jQuery( document ).ready(function($) {
+					$('#nome-autor').val(Cookies.get('nome'));
+					$('#email-autor').val(Cookies.get('email'));
+					
+					var fullDate = new Date()
+					var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
+					var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + fullDate.getDate();
+					$('#data').val(currentDate);
+					
+					$("#insert").click(function(){
+						var titulo = $("#titulo").val();
+						var conteudo = $("#conteudo").val();
+						var autor = $("#nome-autor").val();
+						var email = $("#email-autor").val();
+						var data = $("#data").val();
+
+						var dataString="titulo="+titulo+"&conteudo="+conteudo+"&autor="+autor+"&email="+email+"&data="+data+"&acao=cria-topico";
+						
+						console.log(dataString);
+						
+						if($.trim(titulo).length>0 & $.trim(conteudo).length>0)	{
+							$.post({								
+								url:"http://gbm.appsbdrj.kinghost.net/chat-acoes.php",
+								data: dataString,
+								crossDomain: true,
+								cache: false,
+								beforeSend: function(){ $("#insert").html('Criando...');},
+								error: function(){
+									$("#insert").html('<i class="fas fa-plus"></i> Criar Tópico');
+									$(".response").html('<span id="erro-login">Houve um erro ao incluir, por favor cheque sua internet e tente novamente.<span>');
+								},
+								success: function() {
+									$("#insert").html('<i class="fas fa-plus"></i> Criar Tópico');
+									$(".response").html('<span id="criado-sucesso">O tópico foi adicionado com sucesso.<span>');
+									$("#titulo").val('');
+									$("#conteudo").val('');
+								}
+							});
+						} return false;
+					});					
+				});
+			</script>
+			
+			<div class="response"></div>
+
+			<form action="#" method="post" id="new-post">
+				<label><strong>Título</strong></label>
+				<input type="text" name="titulo" id="titulo">
+				<label><strong>Conteúdo</strong></label>
+				<textarea name="conteudo" id="conteudo"></textarea>
+
+				<input type="hidden" name="nome" id="nome-autor" value="" />
+				<input type="hidden" name="email" id="email-autor" value="" />
+				<input type="hidden" name="data" id="data" value="" />
+
+				<button type="submit" id="insert"><i class="fas fa-plus"></i> Criar Tópico</button>
+				
+			</form>
+			
+		</section>
+		
+	</body>
+</html>
