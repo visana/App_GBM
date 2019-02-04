@@ -33,51 +33,7 @@
 		
 		<section id="content">
 	
-			<a href="chat-criar.html" id="add-topic"><i class="fas fa-plus"></i> Criar Tópico</a>
-			
-			<form id="seach-topicos">
-				<input type="text" id="pesquisa-topicos" placeholder="Pesquisar tópicos..." />
-			</form>
-			
-			<script type="text/javascript">
-				$(document).ready(function() {
-					 var url="http://gbm.appsbdrj.kinghost.net/chat.php";
-					 $.getJSON(url,function(result){
-
-						 $.each(result, function(i, field){
-							 var id = field.id;
-							 var titulo = field.titulo;
-							 var nome = field.autor;
-							 var d = field.data_topico.slice(0, 10).split('-');   
-							 var data = d[2] +'/'+ d[1] +'/'+ d[0];
-							 var link = field.guid;
-							 
-							 // href="ver-novidade.html"
-							 
-							 $("#listview").append('<li><a href="ver-topico.html?id-topic=' + id + '"><span class="date"><i class="fas fa-calendar-alt"></i> ' + data + '</span> <span class="autor"><i class="fas fa-user"></i> ' + nome + '</span><h4>' + titulo + '</h4></a><a href="#inline_content" class="delete-topic inline" name="' + id + '" href="#inline_content">[remover]</a></li></ul>');
-						 });
-					 });
-				});
-			</script>
-			
-			<img src="images/loader.gif" id="loader" alt="" style="display: none;">
-			<div id="resultado">
-				<ul class="list aviso topic-list" id="listview">
-					
-				</ul>
-			</div>
-				
-		<div style="display:none">
-				<div id="inline_content" style="padding:10px; background:#fff;">
-					
-					Tem certeza que deseja remover este tópico e todas as suas respostas?<br><br>
-					<form  action="http://gbm.org.br/app/chat/" method="post">
-						<input type="hidden" name="topic-id" value="" id="topic-id" />
-						<button type="button" id="cancelar" style="border: none; background: #E87500; color: #fff; padding: 5px 10px;" onclick="parent.jQuery.colorbox.close(); return false;">Cancelar</button>
-						<button type="submit" id="remover" style="border: none; background: #E87500; color: #fff; padding: 5px 10px;">Remover</button>
-					</form>
-				</div>
-			</div>
+			<strong>EM BREVE</strong>
 			
 		</section>
 		
