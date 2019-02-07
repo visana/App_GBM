@@ -11,7 +11,7 @@
     <content src="index.html" />
 	
 	<!-- all platforms -->
-	<preference name="phonegap-version" value="cli-8.0.0" />
+	<preference name="phonegap-version" value="cli-7.1.0" />
 	<preference name="orientation" value="portrait"/>
 	<preference name="fullscreen" value="true" />
 	<preference name="DisallowOverscroll" value="true" />
@@ -29,7 +29,7 @@
 	<preference name="detect-data-types" value="true"/>
   	<preference name="exit-on-suspend" value="false"/>
 	
-	<plugin name="onesignal-cordova-plugin" source="npm" spec="2.4.1" /> 
+	<gap:plugin name="onesignal-cordova-plugin" source="npm" spec="2.4.1" /> 
 	<plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-device-motion" source="npm" spec="~1.2.0" />
