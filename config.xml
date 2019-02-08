@@ -6,12 +6,12 @@
         Aplicativo para o Grupo Brasileiro de Melanoma
     </description>
     <author email="ti@visanacomunicacao.com.br" href="http://visanacomunicacao.com.br">
-        Visna Comunicação
+        Visana Comunicação
     </author>
     <content src="index.html" />
 	
 	<!-- all platforms -->
-	<preference name="phonegap-version" value="cli-8.0.0" />
+	<preference name="phonegap-version" value="cli-7.1.0" />
 	<preference name="orientation" value="portrait"/>
 	<preference name="fullscreen" value="true" />
 	<preference name="DisallowOverscroll" value="true" />
@@ -29,7 +29,7 @@
 	<preference name="detect-data-types" value="true"/>
   	<preference name="exit-on-suspend" value="false"/>
 	
-	<gap:plugin name="onesignal-cordova-plugin" spec="^2.4.1" source="npm" />
+	<gap:plugin name="onesignal-cordova-plugin" spec="2.3.3" source="npm" />
 	<plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-device-motion" source="npm" spec="~1.2.0" />
