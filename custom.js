@@ -165,3 +165,18 @@ function getParameterByName(name, url) {
 	if (!results[2]) return '';
 	return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
+// SETUP PUSH
+document.addEventListener('deviceready', function () {
+  // Enable to debug issues.
+  // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+  
+  var notificationOpenedCallback = function(jsonData) {
+    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+  };
+
+  window.plugins.OneSignal
+    .startInit("06185201-a4d9-4967-914a-a2f8fea40a56")
+    .handleNotificationOpened(notificationOpenedCallback)
+    .endInit();
+}, false);
