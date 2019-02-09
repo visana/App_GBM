@@ -11,17 +11,21 @@ var app = {
 	onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
-// SETUP PUSH
-document.addEventListener('deviceready', function () {
-  // Enable to debug issues.
-  // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+		document.addEventListener('deviceready', function () {
+ 
+	// Enable to debug issues.
+	// window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
   
-  var notificationOpenedCallback = function(jsonData) {
-    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-  };
+  
+	/* Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
 
-  window.plugins.OneSignal
-    .startInit("06185201-a4d9-4967-914a-a2f8fea40a56")
-    .handleNotificationOpened(notificationOpenedCallback)
-    .endInit();
-}, false);
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
+    }*/
+};
