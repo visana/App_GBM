@@ -34,7 +34,7 @@
 </edit-config>
 	
 	<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-    <string>We need your location to filter the most near events/string>
+    <string>We need your location to filter the most near events.</string>
 </edit-config>
 	
 	
