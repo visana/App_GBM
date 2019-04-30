@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<widget id="com.visana.gbm" version="1.2.8" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.visana.gbm" version="1.2.9" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
 <!-- <widget id="com.visana<strong></strong>.gbm" version="1.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">-->
     <name>GBM</name>
     <description>
@@ -28,6 +28,10 @@
 	<preference name="StatusBarBackgroundColor" value="#000000" />
 	<preference name="detect-data-types" value="true"/>
   	<preference name="exit-on-suspend" value="false"/>
+	
+	<edit-config target="NSLocationAlwaysUsageDescription" file="*-Info.plist" mode="overwrite">
+    <string>We are using the default location option to users.</string>
+</edit-config>
 	
 	<plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
@@ -122,13 +126,6 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
 
-<key>NSLocationAlwaysUsageDescription</key>
-
-<string>This resource is usage always to locate the user.</string>
-
-<key>NSLocationWhenInUseUsageDescription</key>
-
-<string>This resource is usage when the user allow the location. </string>
 	    
     </platform>
 </widget>
