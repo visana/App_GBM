@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<widget id="com.visana.gbm" version="1.2.6" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.visana.gbm" version="1.2.7" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
 <!-- <widget id="com.visana<strong></strong>.gbm" version="1.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">-->
     <name>GBM</name>
     <description>
@@ -121,5 +121,10 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+
+<config-file platform="ios" parent="NSLocationAlwaysUsageDescription" mode="replace">
+<string>This app will allow users to use the location on the app.</string>
+</config-file>
+	    
     </platform>
 </widget>
